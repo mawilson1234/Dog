@@ -17,7 +17,7 @@ newTrial( "intro" ,
         .before(newText("ID", "Your Prolific ID:<p>").settings.css("font-size", "2em").settings.css("margin", "50px"))
         .settings.css("font-size", "2em")
         .settings.css('width', '30%')
-        .settings.css('text-align', 'center')
+        .settings.css('margin', 'auto')
         .print()
         .log()
     ,
