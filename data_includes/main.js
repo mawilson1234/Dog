@@ -1,9 +1,9 @@
 PennController.ResetPrefix(null) // Shorten command names (keep this line here)
-/*PennController.DebugOff()
+PennController.DebugOff()
 
 PennController.SetCounter( "setcounter" )
 
-var counterOverride = 0*/
+//var counterOverride = 0
 
 Sequence("setcounter","intro","consent", "recording", "instruction", randomize("trial_prac"), "warn", "instruction2", rshuffle("trial"), "feedback", SendResults(), "bye")
 
@@ -79,9 +79,9 @@ PennController.Template("practice.csv", variable => ["trial_prac",
         
         "PennController", PennController(
         
-            /*newMediaRecorder(variable.Item, "audio")
+            newMediaRecorder(variable.Item, "audio")
                 .record()
-            ,*/
+            ,
             
             newAudio("click_prac", "click.wav")
                 .play()
@@ -96,7 +96,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
             
             newTimer(variable.wait1)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("word1")
@@ -111,7 +111,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
             
             newTimer(variable.wait2)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("word2")
@@ -126,7 +126,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
             
             newTimer(variable.wait3)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("word3")
@@ -141,7 +141,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
             
             newTimer(variable.wait4)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("word4")
@@ -157,7 +157,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
         
             newTimer("recall_timer",6500)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("recall_prompt")
@@ -170,7 +170,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
                 .center()
                 .settings.size(240, 48)
                 .print()
-                //.wait()
+                .wait()
                 .remove()
         )
     ]
@@ -214,13 +214,13 @@ PennController.Template("stim.csv", variable => ["trial",
         
         "PennController", PennController(
 
-            /*newMediaRecorder(variable.Item, "audio")
+            newMediaRecorder(variable.Item, "audio")
                 .record()
-            ,*/
+            ,
             
             newAudio("click", "click.wav")
                 .play()
-                //.wait()
+                .wait()
             ,
         
             newText("word1", variable.word1)
@@ -231,7 +231,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newTimer(variable.wait1)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("word1")
@@ -246,7 +246,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newTimer(variable.wait2)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("word2")
@@ -261,7 +261,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newTimer(variable.wait3)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("word3")
@@ -276,7 +276,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newTimer(variable.wait4)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("word4")
@@ -292,16 +292,16 @@ PennController.Template("stim.csv", variable => ["trial",
         
             newTimer("recall_timer",6500)
                 .start()
-                //.wait()
+                .wait()
             ,
             
             getText("recall_prompt")
                 .remove()
             ,
             
-            /*getMediaRecorder(variable.Item)
+            getMediaRecorder(variable.Item)
                 .stop()
-            ,*/
+            ,
             
             newButton("Next")
                 .center()
@@ -309,7 +309,7 @@ PennController.Template("stim.csv", variable => ["trial",
                 .center()
                 .settings.size(240, 48)
                 .print()
-                //.wait()
+                .wait()
                 .remove()
         ).log("Group", variable.Group)
         .log("Item", variable.Item)
