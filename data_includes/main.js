@@ -3,25 +3,23 @@ PennController.DebugOff()
 
 PennController.SetCounter( "setcounter" )
 
-//var counterOverride = 0
+var counterOverride = 0
 
 Sequence("setcounter","intro","consent", "recording", "instruction", randomize("trial_prac"), "warn", "instruction2", rshuffle("trial"), "feedback", SendResults(), "bye")
 
 newTrial( "intro",
 
-    newText("Welcome","<p>Welcome! To participate in this experiment, you must meet the following requirements.<p>(1) Your computer must have a microphone (built-in microphone is fine).<p>(2) Your browser must be either Chrome or Firefox. You CANNOT use Safari for this experiment.<p>(3) You must turn off music/video (e.g., YouTube) played on the same computer you are using to take this experiment.<p>(4) Please note that you will be asked to speak aloud during the experiment (recite simple sentences and pronounce fake words aloud). Your speech will be recorded and that's our critical data.<p>If you meet these requirements, please enter your Prolific ID below and click Next:")
+    newText("Welcome","Welcome! To participate in this experiment, you must meet the following requirements.<p>(1) Your computer must have a microphone (built-in microphone is fine).<p>(2) Your browser must be either Chrome or Firefox. You CANNOT use Safari for this experiment.<p>(3) You must turn off music/video (e.g., YouTube) played on the same computer you are using to take this experiment.<p>(4) Please note that you will be asked to speak aloud during the experiment (recite simple sentences and pronounce fake words aloud). Your speech will be recorded and that's our critical data.<p>If you meet these requirements, please enter your Prolific ID below and click Next:")
         .settings.css("font-size", "2em")
-        .settings.css("margin","50px")
         .print()
     ,
     
     newTextInput("ProlificID")
         .before(newText("ID", "Your Prolific ID:")
                 .settings.css("font-size", "2em")
-                .settings.css("margin", "45px")
         )
         .settings.css("font-size", "2em")
-        .settings.css('width', '30%')
+        .settings.css('width', '50%')
         .settings.css('margin', 'auto')
         .print()
         .log()
@@ -30,40 +28,39 @@ newTrial( "intro",
     newButton("Next","Next")
         .center()
         .settings.css("font-size", "2em")
-        .settings.css('margin', '80px')
+        .settings.css('margin', '40px')
         .settings.size(500, 48)
         .print()
         .wait()
 )
 
 newTrial( "consent" ,
-    newText("<p>Please click <a href='https://shotam.github.io/IRB/consent_online_recording.pdf' target='_blank'>here</a> to download the consent form for this study. If you read it and agree to participate in this study, click 'I Agree' below. If you do not agree to participate in this study, you can leave this study by closing the tab.</p>")
+    newText("Please click <a href='https://shotam.github.io/IRB/consent_online_recording.pdf' target='_blank'>here</a> to download the consent form for this study. If you read it and agree to participate in this study, click 'I Agree' below. If you do not agree to participate in this study, you can leave this study by closing the tab.")
         .settings.css("font-size", "2em")
-        .settings.css("margin","50px")
         .print()
     ,
     
     newButton("Agree","I Agree")
         .center()
         .settings.css("font-size", "2em")
+        .settings.css('margin', '40px')
         .settings.size(500, 48)
         .print()
         .wait()
 )
 
-InitiateRecorder("https://umassgaplab.net/experiment/PCIbex_server.php", "This experiment collects audio recordings. <strong>Once you grant it access to your recording device, you will be notified of whether you are being recorded by a label at the top of the page.</strong>").label("recording")
+InitiateRecorder("https://umassgaplab.net/experiment/PCIbex_server.php", "<div style = 'font-size: 2em; margin: 40px;'>This experiment collects audio recordings. <strong>Once you grant it access to your recording device, you will be notified of whether you are being recorded by a label at the top of the page.</strong></div>").label("recording")
 
 newTrial("instruction",
-    newText("Instr", "<p>In this experiment, you will first read a sentence in a word-by-word fashion, then pronounce a series of fake words out loud, and then say out loud the sentence you memorized.<p>When reading the sentence, you will first see a long dash appear. Press the Space bar to show the first word when you are ready. When you are finished reading each word, you should press the Space bar to proceed, which will replace the previous word with the next one. Your task is to read the sentence silently and <b>memorize the sentence for later recall.</b></p> <p>After you see each sentence, you will see five stars, like this '*****'. When you are ready, you should press the Space bar again to proceed to the second task, which is to <b>pronounce each fake word out loud</b> as it is presented to you <b>as soon as possible</b>. If you are unsure about how to pronounce a particular fake word, just try your best. After you have pronounced the fake words, you will see the text 'Recall Sentence' appear on the screen. When you see 'Recall Sentence' appear, you should recite the sentence you memorized earlier <b>aloud</b>, as soon as possible.</p> <p><b>TIP: Many people find it helpful to try to visualize the situations described by sentences when memorizing them.</b></p>")
+    newText("Instr", "In this experiment, you will first read a sentence in a word-by-word fashion, then pronounce a series of fake words out loud, and then say out loud the sentence you memorized.<p>When reading the sentence, you will first see a long dash appear. Press the Space bar to show the first word when you are ready. When you are finished reading each word, you should press the Space bar to proceed, which will replace the previous word with the next one. Your task is to read the sentence silently and <b>memorize the sentence for later recall.</b></p> <p>After you see each sentence, you will see five stars, like this '*****'. When you are ready, you should press the Space bar again to proceed to the second task, which is to <b>pronounce each fake word out loud</b> as it is presented to you <b>as soon as possible</b>. If you are unsure about how to pronounce a particular fake word, just try your best. After you have pronounced the fake words, you will see the text 'Recall Sentence' appear on the screen. When you see 'Recall Sentence' appear, you should recite the sentence you memorized earlier <b>aloud</b>, as soon as possible.</p> <p><b>TIP: Many people find it helpful to try to visualize the situations described by sentences when memorizing them.</b></p>")
         .settings.css("font-size", "2em")
-        .settings.css("margin", "80px")
         .print()
     ,
 
     newButton("Click","Click here to begin practice trials!")
         .center()
         .settings.css("font-size", "2em")
-        .settings.css("margin", "80px")
+        .settings.css("margin", "40px")
         .settings.size(500, 48)
         .print()
         .wait()
@@ -175,29 +172,29 @@ PennController.Template("practice.csv", variable => ["trial_prac",
 )
 
 newTrial( "warn",
-    newText("<p> Practice done! </p> <p> <b> Please note: some participants reported that the script froze in the middle of the experiment. If this happens to you, please don’t panic, and let us know via the message function in Prolific. We will make sure that you will be compensated for the time you spent for the experiment. </b> </p>")
+    newText("Practice done!<p><b>Please note: some participants have reported that the script froze in the middle of the experiment. If this happens to you, please don’t panic, and let us know via the message function in Prolific. We will make sure that you will be compensated for the time you spent for the experiment.</b></p>")
         .settings.css("font-size", "2em")
-        .settings.css("margin","50px")
         .print()
     ,
     newButton("Next", "Next")
         .center()
         .settings.css("font-size", "2em")
+        .settings.css('margin', '40px')
         .settings.size(500, 48)
         .print()
         .wait()
 )
 
 newTrial("instruction2",
-    newText("Instr2", "<p> Now, you are ready to start the experiment! Remember, your task is to:</p><p>(1) Silently read and memorize sentences presented in a word-by-word fashion.<p>(2) Read aloud each fake word presented after the sentence.<p>(3) When you see the words 'Recall Sentence,' say the sentence you memorized out loud.")
+    newText("Instr2", "Now, you are ready to start the experiment! Remember, your task is to:<p>(1) Silently read and memorize sentences presented in a word-by-word fashion.<p>(2) Read aloud each fake word presented after the sentence.<p>(3) When you see the words 'Recall Sentence,' say the sentence you memorized out loud.")
         .settings.css("font-size", "2em")
-        .settings.css('margin', '80px')
         .print()
     ,
 
     newButton("Click","Click here to begin the experiment")
-        .settings.css("font-size", "2em")
         .center()
+        .settings.css("font-size", "2em")
+        .settings.css('margin', '40px')
         .settings.size(550, 48)
         .print()
         .wait()
@@ -325,32 +322,37 @@ PennController.Template("stim.csv", variable => ["trial",
 )
 
 PennController("feedback",
-    newText("feedback_instruction","If you have any feedback on the experiment, please leave it here.")
+    newText("feedback_instruction","If you have any feedback on the experiment, please leave it here.<p>")
+        .center()
         .print()
     ,
 
     newTextInput("feedback", "")
+        .center()
         .log()
         .lines(0)
-        .size(400, 200)
+        .size(420, 200)
         .print()
     ,
 
-    newText("prev_exp", "Did you participate in any previous study on Prolific that contained sentences very similar to the ones in this study? (Your answer to this question will not affect your payment in any way.)")
+    newText("prev_exp", "<div style='text-align: center; width: 420px; max-width: 420px;'><div style = 'display: inline-block; text-align: left;'><p>&nbsp;</p><p>Have you participated in any previous study on Prolific that contained sentences very similar to the ones in this study? (Your answer to this question will not affect your payment in any way.)</div></div>")
+        .center()
         .print()
     ,
 
     newTextInput('prev_exp', "")
+        .center()
         .log()
         .lines(0)
-        .size(400, 200)
+        .size(420, 200)
         .print()
     ,
 
     newButton("send", "Send")
-        .settings.size(240,48)
+        .center()
+        .settings.size(500,48)
         .settings.css("font-size", "2em")
-        .settings.css('margin', '80px')
+        .settings.css('margin', '40px')
         .print()
         .wait()
 )
