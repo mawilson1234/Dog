@@ -210,6 +210,7 @@ PennController.Template("stim.csv", variable => ["trial",
         
             newText("word1", variable.word1)
                 .settings.css("font-size", "2em")
+                .settings.css('margin', 'auto')
                 .print()
             ,
             
@@ -224,6 +225,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newText("word2", variable.word2)
                 .settings.css("font-size", "2em")
+                .settings.css('margin', 'auto')
                 .print()
             ,
             
@@ -238,6 +240,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newText("word3", variable.word3)
                 .settings.css("font-size", "2em")
+                .settings.css('margin', 'auto')
                 .print()
             ,
             
@@ -252,6 +255,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newText("word4", variable.word4)
                 .settings.css("font-size", "2em")
+                .settings.css('margin', 'auto')
                 .print()
             ,
             
@@ -267,6 +271,7 @@ PennController.Template("stim.csv", variable => ["trial",
             newText("recall_prompt", "Recall Sentence")
                 .settings.css("font-size", "2em")
                 .color("red")
+                .settings.css('margin', 'auto')
                 .print()
             ,
         
@@ -286,6 +291,7 @@ PennController.Template("stim.csv", variable => ["trial",
             newButton("Next")
                 .center()
                 .settings.css("font-size", "2em")
+                .settings.css('margin', 'auto')
                 .settings.size(240, 48)
                 .print()
                 .wait()
