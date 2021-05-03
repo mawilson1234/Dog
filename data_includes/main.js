@@ -17,7 +17,7 @@ newTrial( "intro" ,
         .before(newText("ID", "Your Prolific ID:<p>").settings.css("font-size", "2em").settings.css("margin", "50px"))
         .settings.css("font-size", "2em")
         .settings.css('width', '30%')
-        .settings.css('margin', 'auto')
+        .settings.css('text-align', 'center')
         .print()
         .log()
     ,
@@ -82,6 +82,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
         
             newText("word1", variable.word1)
                 .settings.css("font-size", "2em")
+                .settings.css('text-align', 'center')
                 .print()
             ,
             
@@ -96,6 +97,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
             
             newText("word2", variable.word2)
                 .settings.css("font-size", "2em")
+                .settings.css('text-align', 'center')
                 .print()
             ,
             
@@ -110,6 +112,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
             
             newText("word3", variable.word3)
                 .settings.css("font-size", "2em")
+                .settings.css('text-align', 'center')
                 .print()
             ,
             
@@ -124,6 +127,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
             
             newText("word4", variable.word4)
                 .settings.css("font-size", "2em")
+                .settings.css('text-align', 'center')
                 .print()
             ,
             
@@ -139,6 +143,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
             newText("recall_prompt", "Recall Sentence")
                 .settings.css("font-size", "2em")
                 .color("red")
+                .settings.css('text-align', 'center')
                 .print()
             ,
         
@@ -154,6 +159,7 @@ PennController.Template("practice.csv", variable => ["trial_prac",
             newButton("Next")
                 .center()
                 .settings.css("font-size", "2em")
+                .settings.css('text-align', 'center')
                 .settings.size(240, 48)
                 .print()
                 .wait()
@@ -210,7 +216,7 @@ PennController.Template("stim.csv", variable => ["trial",
         
             newText("word1", variable.word1)
                 .settings.css("font-size", "2em")
-                .settings.css('margin', 'auto')
+                .settings.css('text-align', 'center')
                 .print()
             ,
             
@@ -225,7 +231,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newText("word2", variable.word2)
                 .settings.css("font-size", "2em")
-                .settings.css('margin', 'auto')
+                .settings.css('text-align', 'center')
                 .print()
             ,
             
@@ -240,7 +246,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newText("word3", variable.word3)
                 .settings.css("font-size", "2em")
-                .settings.css('margin', 'auto')
+                .settings.css('text-align', 'center')
                 .print()
             ,
             
@@ -255,7 +261,7 @@ PennController.Template("stim.csv", variable => ["trial",
             
             newText("word4", variable.word4)
                 .settings.css("font-size", "2em")
-                .settings.css('margin', 'auto')
+                .settings.css('text-align', 'center')
                 .print()
             ,
             
@@ -271,7 +277,7 @@ PennController.Template("stim.csv", variable => ["trial",
             newText("recall_prompt", "Recall Sentence")
                 .settings.css("font-size", "2em")
                 .color("red")
-                .settings.css('margin', 'auto')
+                .settings.css('text-align', 'center')
                 .print()
             ,
         
@@ -291,7 +297,7 @@ PennController.Template("stim.csv", variable => ["trial",
             newButton("Next")
                 .center()
                 .settings.css("font-size", "2em")
-                .settings.css('margin', 'auto')
+                .settings.css('text-align', 'center')
                 .settings.size(240, 48)
                 .print()
                 .wait()
