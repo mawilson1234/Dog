@@ -129,33 +129,65 @@ D,32,respect,SubjExp,Passive,The agent is seriously respected by the rock star. 
 A,32,impress,ObjExp,Active,The rock star seriously impresses the agent. *****,gasmab,urcle,eldur,,2000,2000,2000,50
 A,33,kick,AgTh,Active,The wrestler accidentally kicked the referee. *****,linurs,squing,furmur,dalsam,2000,2000,2000,2000
 B,33,kick,AgTh,Passive,The referee was accidentally kicked by the wrestler. *****,linurs,squing,furmur,dalsam,2000,2000,2000,2000
-B,34,resist,AgTh,Active,The protestor strongly resisted the officer. *****,gerove,asount,,,2000,2000,50,50
+C,33,kick,AgTh,Active,The wrestler accidentally kicked the referee. *****,linurs,squing,furmur,dalsam,2000,2000,2000,2000
+D,33,kick,AgTh,Passive,The referee was accidentally kicked by the wrestler. *****,linurs,squing,furmur,dalsam,2000,2000,2000,2000
+D,34,resist,AgTh,Active,The protestor strongly resisted the officer. *****,gerove,asount,,,2000,2000,50,50
 A,34,resist,AgTh,Passive,The officer was strongly resisted by the protestor. *****,gerove,asount,,,2000,2000,50,50
+B,34,resist,AgTh,Active,The protestor strongly resisted the officer. *****,gerove,asount,,,2000,2000,50,50
+C,34,resist,AgTh,Passive,The officer was strongly resisted by the protestor. *****,gerove,asount,,,2000,2000,50,50
+C,35,interview,AgTh,Active,The columnist excitedly interviewed the celebrity. *****,nabre,tersia,raimy,,2000,2000,2000,50
+D,35,interview,AgTh,Passive,The celebrity was excitedly interviewed by the columnist. *****,nabre,tersia,raimy,,2000,2000,2000,50
 A,35,interview,AgTh,Active,The columnist excitedly interviewed the celebrity. *****,nabre,tersia,raimy,,2000,2000,2000,50
 B,35,interview,AgTh,Passive,The celebrity was excitedly interviewed by the columnist. *****,nabre,tersia,raimy,,2000,2000,2000,50
 B,36,review,AgTh,Active,The critic thoroughly reviewed the playwright. *****,clyke,atcher,edcept,irvest,2000,2000,2000,2000
+C,36,review,AgTh,Passive,The playwright was thoroughly reviewed by the critic. *****,clyke,atcher,edcept,irvest,2000,2000,2000,2000
+D,36,review,AgTh,Active,The critic thoroughly reviewed the playwright. *****,clyke,atcher,edcept,irvest,2000,2000,2000,2000
 A,36,review,AgTh,Passive,The playwright was thoroughly reviewed by the critic. *****,clyke,atcher,edcept,irvest,2000,2000,2000,2000
 A,37,telephone,AgTh,Active,The retiree frequently telephoned the receptionist. *****,guled,arthem,,,2000,2000,50,50
 B,37,telephone,AgTh,Passive,The receptionist was frequently telephoned by the retiree. *****,guled,arthem,,,2000,2000,50,50
-B,38,analyze,AgTh,Active,The psychiatrist thoroughly analyzed the patient. *****,edich,phouse,jabels,,2000,2000,2000,50
+C,37,telephone,AgTh,Active,The retiree frequently telephoned the receptionist. *****,guled,arthem,,,2000,2000,50,50
+D,37,telephone,AgTh,Passive,The receptionist was frequently telephoned by the retiree. *****,guled,arthem,,,2000,2000,50,50
+D,38,analyze,AgTh,Active,The psychiatrist thoroughly analyzed the patient. *****,edich,phouse,jabels,,2000,2000,2000,50
 A,38,analyze,AgTh,Passive,The patient was thoroughly analyzed by the psychiatrist. *****,edich,phouse,jabels,,2000,2000,2000,50
+B,38,analyze,AgTh,Active,The psychiatrist thoroughly analyzed the patient. *****,edich,phouse,jabels,,2000,2000,2000,50
+C,38,analyze,AgTh,Passive,The patient was thoroughly analyzed by the psychiatrist. *****,edich,phouse,jabels,,2000,2000,2000,50
+C,39,educate,AgTh,Active,The blacksmith thoroughly educated the apprentice. *****,bloosh,puffaw,mescat,incirs,2000,2000,2000,2000
+D,39,educate,AgTh,Passive,The apprentice was thoroughly educated by the blacksmith. *****,bloosh,puffaw,mescat,incirs,2000,2000,2000,2000
 A,39,educate,AgTh,Active,The blacksmith thoroughly educated the apprentice. *****,bloosh,puffaw,mescat,incirs,2000,2000,2000,2000
 B,39,educate,AgTh,Passive,The apprentice was thoroughly educated by the blacksmith. *****,bloosh,puffaw,mescat,incirs,2000,2000,2000,2000
 B,40,inspect,AgTh,Active,The auditor frequently inspected the accountant. *****,clifle,clucco,,,2000,2000,50,50
+C,40,inspect,AgTh,Passive,The accountant was frequently inspected by the auditor. *****,clifle,clucco,,,2000,2000,50,50
+D,40,inspect,AgTh,Active,The auditor frequently inspected the accountant. *****,clifle,clucco,,,2000,2000,50,50
 A,40,inspect,AgTh,Passive,The accountant was frequently inspected by the auditor. *****,clifle,clucco,,,2000,2000,50,50
 A,41,revive,AgTh,Active,The firefighter quickly revived the victim. *****,shobia,snoofy,ginews,,2000,2000,2000,50
 B,41,revive,AgTh,Passive,The victim was quickly revived by the firefighter. *****,shobia,snoofy,ginews,,2000,2000,2000,50
-B,42,endorse,AgTh,Active,The manager excitedly endorsed the politician. *****,spince,pluent,metoed,lummar,2000,2000,2000,2000
+C,41,revive,AgTh,Active,The firefighter quickly revived the victim. *****,shobia,snoofy,ginews,,2000,2000,2000,50
+D,41,revive,AgTh,Passive,The victim was quickly revived by the firefighter. *****,shobia,snoofy,ginews,,2000,2000,2000,50
+D,42,endorse,AgTh,Active,The manager excitedly endorsed the politician. *****,spince,pluent,metoed,lummar,2000,2000,2000,2000
 A,42,endorse,AgTh,Passive,The politician was excitedly endorsed by the manager. *****,spince,pluent,metoed,lummar,2000,2000,2000,2000
+B,42,endorse,AgTh,Active,The manager excitedly endorsed the politician. *****,spince,pluent,metoed,lummar,2000,2000,2000,2000
+C,42,endorse,AgTh,Passive,The politician was excitedly endorsed by the manager. *****,spince,pluent,metoed,lummar,2000,2000,2000,2000
+C,43,sketch,AgTh,Active,The designer quickly sketched the supermodel. *****,hodes,inmoft,,,2000,2000,50,50
+D,43,sketch,AgTh,Passive,The supermodel was quickly sketched by the designer. *****,hodes,inmoft,,,2000,2000,50,50
 A,43,sketch,AgTh,Active,The designer quickly sketched the supermodel. *****,hodes,inmoft,,,2000,2000,50,50
 B,43,sketch,AgTh,Passive,The supermodel was quickly sketched by the designer. *****,hodes,inmoft,,,2000,2000,50,50
 B,44,censor,AgTh,Active,The dictator strongly censored the dissident. *****,olbits,teploy,gouma,,2000,2000,2000,50
+C,44,censor,AgTh,Passive,The dissident was strongly censored by the dictator. *****,olbits,teploy,gouma,,2000,2000,2000,50
+D,44,censor,AgTh,Active,The dictator strongly censored the dissident. *****,olbits,teploy,gouma,,2000,2000,2000,50
 A,44,censor,AgTh,Passive,The dissident was strongly censored by the dictator. *****,olbits,teploy,gouma,,2000,2000,2000,50
 A,45,anoint,AgTh,Active,The priest solemnly anointed the baby. *****,thosen,foimle,tualms,guala,2000,2000,2000,2000
 B,45,anoint,AgTh,Passive,The baby was solemnly anointed by the priest. *****,thosen,foimle,tualms,guala,2000,2000,2000,2000
-B,46,parry,AgTh,Active,The knight quickly parried the assassin. *****,beords,godry,,,2000,2000,50,50
+C,45,anoint,AgTh,Active,The priest solemnly anointed the baby. *****,thosen,foimle,tualms,guala,2000,2000,2000,2000
+D,45,anoint,AgTh,Passive,The baby was solemnly anointed by the priest. *****,thosen,foimle,tualms,guala,2000,2000,2000,2000
+D,46,parry,AgTh,Active,The knight quickly parried the assassin. *****,beords,godry,,,2000,2000,50,50
 A,46,parry,AgTh,Passive,The assassin was quickly parried by the knight. *****,beords,godry,,,2000,2000,50,50
+B,46,parry,AgTh,Active,The knight quickly parried the assassin. *****,beords,godry,,,2000,2000,50,50
+C,46,parry,AgTh,Passive,The assassin was quickly parried by the knight. *****,beords,godry,,,2000,2000,50,50
+C,47,inaugurate,AgTh,Active,The judge solemnly inaugurated the governor. *****,ettail,grocus,lancos,,2000,2000,2000,50
+D,47,inaugurate,AgTh,Passive,The governor was solemnly inaugurated by the judge. *****,ettail,grocus,lancos,,2000,2000,2000,50
 A,47,inaugurate,AgTh,Active,The judge solemnly inaugurated the governor. *****,ettail,grocus,lancos,,2000,2000,2000,50
 B,47,inaugurate,AgTh,Passive,The governor was solemnly inaugurated by the judge. *****,ettail,grocus,lancos,,2000,2000,2000,50
 B,48,interrupt,AgTh,Active,The chairperson accidentally interrupted the delegate. *****,talate,melves,slaxen,gatrix,2000,2000,2000,2000
+C,48,interrupt,AgTh,Passive,The delegate was accidentally interrupted by the chairperson. *****,talate,melves,slaxen,gatrix,2000,2000,2000,2000
+D,48,interrupt,AgTh,Active,The chairperson accidentally interrupted the delegate. *****,talate,melves,slaxen,gatrix,2000,2000,2000,2000
 A,48,interrupt,AgTh,Passive,The delegate was accidentally interrupted by the chairperson. *****,talate,melves,slaxen,gatrix,2000,2000,2000,2000
