@@ -193,7 +193,7 @@ newTrial("instruction2",
         .wait()
 )
 
-PennController.Template("stim_exp.csv", variable => ["trial_exp",
+PennController.Template("stim.csv", variable => ["trial",
         "DashedSentenceBig", {s: variable.Sentence, display: "in place"}
         ,
         
@@ -290,128 +290,10 @@ PennController.Template("stim_exp.csv", variable => ["trial_exp",
                 .print()
                 .wait()
                 .remove()
-        ).log("Category", "Experiencer")
-        .log("Group", variable.Group)
+        ).log("Group", variable.Group)
         .log("Item", variable.Item)
         .log("VerbType", variable.VerbType)
         .log("SentenceVoice", variable.SentenceVoice)
-        .log("Sentence", variable.Sentence)
-        .log("word1", variable.word1)
-        .log("word2", variable.word2)
-        .log("word3", variable.word3)
-        .log("word4", variable.word4)
-        .log("wait1", variable.wait1)
-        .log("wait2", variable.wait2)
-        .log("wait3", variable.wait3)
-        .log("wait4", variable.wait4)
-    ]
-)
-
-PennController.Template("stim_gardenpath.csv", variable => ["trial_gardenpath",
-
-        "DashedSentenceBig", {s: variable.Sentence, display: "in place"}
-        ,
-        
-        "PennController", PennController(
-            
-            newMediaRecorder(variable.Item, "audio")
-                .record()
-            ,
-
-            newAudio("click", "click.wav")
-                .play()
-                .wait()
-            ,
-        
-            newText("word1", variable.word1)
-                .settings.css("font-size", "2em")
-                .print()
-            ,
-            
-            newTimer(variable.wait1)
-                .start()
-                .wait()
-            ,
-            
-            getText("word1")
-                .remove()
-            ,
-            
-            newText("word2", variable.word2)
-                .settings.css("font-size", "2em")
-                .print()
-            ,
-            
-            newTimer(variable.wait2)
-                .start()
-                .wait()
-            ,
-            
-            getText("word2")
-                .remove()
-            ,
-            
-            newText("word3", variable.word3)
-                .settings.css("font-size", "2em")
-                .print()
-            ,
-            
-            newTimer(variable.wait3)
-                .start()
-                .wait()
-            ,
-            
-            getText("word3")
-                .remove()
-            , 
-            
-            newText("word4", variable.word4)
-                .settings.css("font-size", "2em")
-                .print()
-            ,
-            
-            newTimer(variable.wait4)
-                .start()
-                .wait()
-            ,
-            
-            getText("word4")
-                .remove()
-            ,            
-            
-            newText("recall_prompt", "Recall Sentence")
-                .settings.css("font-size", "2em")
-                .color("red")
-                .print()
-            ,
-        
-            newTimer("recall_timer",6500)
-                .start()
-                .wait()
-            ,
-            
-            getText("recall_prompt")
-                .remove()
-            ,
-            
-            getMediaRecorder(variable.Item)
-                .stop()
-            ,
-            
-            newButton("Next")
-                .center()
-                .settings.css("font-size", "2em")
-                .settings.size(240, 48)
-                .print()
-                .wait()
-                .remove()
-        ).log("Category", "Garden-Path")
-        .log("Group", variable.Group)
-        .log("Item", variable.Item)
-        .log("Comp", variable.Comp)
-        .log("ObjectPr", variable.ObjectPr)
-        .log("SCPr", variable.SCPr)
-        .log("Bias", variable.Bias)
         .log("Sentence", variable.Sentence)
         .log("word1", variable.word1)
         .log("word2", variable.word2)
@@ -455,7 +337,6 @@ PennController("feedback",
         .wait()
 )
 
-// Spaces and linebreaks don't matter to the script: we've only been using them for the sake of readability
 newTrial("bye" ,
     newText("Thank you for your participation! Please go to the following web page to verify your participation: <a href='https://app.prolific.co/submissions/complete?cc=728AA2CF'> https://app.prolific.co/submissions/complete?cc=728AA2CF</a>.")
         .print(),
