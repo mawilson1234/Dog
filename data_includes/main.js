@@ -5,11 +5,11 @@ PennController.SetCounter( "setcounter" )
 
 var counterOverride = 0
 
-Sequence("setcounter","intro","consent", "recording", "instruction", randomize("trial_prac"), "warn", "instruction2", rshuffle("trial"), "feedback", SendResults(), "bye")
+Sequence("setcounter","intro", "consent", "recording", "instruction", randomize("trial_prac"), "warn", "instruction2", rshuffle("pretrial"), rshuffle("trial"), "feedback", SendResults(), "bye")
 
 newTrial( "intro",
 
-    newText("Welcome","Welcome! To participate in this experiment, you must meet the following requirements.<p>(1) Your computer must have a microphone (built-in microphone is fine).<p>(2) Your browser must be either Chrome or Firefox. You CANNOT use Safari for this experiment.<p>(3) You must turn off music/video (e.g., YouTube) played on the same computer you are using to take this experiment.<p>(4) Please note that you will be asked to speak aloud during the experiment (recite simple sentences and pronounce fake words aloud). Your speech will be recorded and that's our critical data.<p>If you meet these requirements, please enter your Prolific ID below and click Next:")
+    newText("Welcome","Welcome! This experiment has two halves. Following the first half, you will see a link to the second half, which will have different instructions you will see at that time.<p>To participate in this experiment, you must meet the following requirements.<p>(1) Your computer must have a microphone (a built-in microphone is fine).<p>(2) Your browser must be either Chrome or Firefox. You CANNOT use Safari for this experiment.<p>(3) You must turn off music/video (e.g., YouTube) played on the same computer you are using to take this experiment.<p>(4) Please note that you will be asked to speak aloud during the experiment (recite simple sentences and pronounce fake words aloud). Your speech will be recorded and that's our critical data.<p>If you meet these requirements, please enter your Prolific ID below and click Next:")
         .settings.css("font-size", "2em")
         .print()
     ,
@@ -200,6 +200,111 @@ newTrial("instruction2",
         .wait()
 )
 
+PennController.Template("pretrial.csv", variable => ["pretrial",
+
+        "DashedSentenceBig", {
+            s: variable.Sentence, 
+            display: "in place"
+        },
+        
+        "PennController", PennController(
+        
+            newMediaRecorder(variable.Item, "audio")
+                .record()
+            ,
+            
+            newAudio("click_prac", "click.wav")
+                .play()
+                .wait()
+            ,
+        
+            newText("word1", variable.word1)
+                .settings.css("font-size", "2em")
+                .center()
+                .print()
+            ,
+            
+            newTimer(variable.wait1)
+                .start()
+                .wait()
+            ,
+            
+            getText("word1")
+                .remove()
+            ,
+            
+            newText("word2", variable.word2)
+                .settings.css("font-size", "2em")
+                .center()
+                .print()
+            ,
+            
+            newTimer(variable.wait2)
+                .start()
+                .wait()
+            ,
+            
+            getText("word2")
+                .remove()
+            ,
+            
+            newText("word3", variable.word3)
+                .settings.css("font-size", "2em")
+                .center()
+                .print()
+            ,
+            
+            newTimer(variable.wait3)
+                .start()
+                .wait()
+            ,
+            
+            getText("word3")
+                .remove()
+            , 
+            
+            newText("word4", variable.word4)
+                .settings.css("font-size", "2em")
+                .center()
+                .print()
+            ,
+            
+            newTimer(variable.wait4)
+                .start()
+                .wait()
+            ,
+            
+            getText("word4")
+                .remove()
+            ,            
+            
+            newText("recall_prompt", "Recall Sentence")
+                .settings.css("font-size", "2em")
+                .color("red")
+                .center()
+                .print()
+            ,
+        
+            newTimer("recall_timer",6500)
+                .start()
+                .wait()
+            ,
+            
+            getText("recall_prompt")
+                .remove()
+            ,
+            
+            newButton("Next")
+                .center()
+                .settings.css("font-size", "2em")
+                .settings.size(240, 48)
+                .print()
+                .wait()
+                .remove()
+        )
+    ]
+)
+
 PennController.Template("stim.csv", variable => ["trial",
 
         "DashedSentenceBig", {
@@ -294,9 +399,7 @@ PennController.Template("stim.csv", variable => ["trial",
                 .remove()
             ,
             
-            getMediaRecorder(variable.Item)
-                .stop()
-            ,
+           
             
             newButton("Next")
                 .center()
@@ -323,25 +426,12 @@ PennController.Template("stim.csv", variable => ["trial",
 )
 
 PennController("feedback",
-    newText("feedback_instruction","If you have any feedback on the experiment, please leave it here.<p>")
+    newText("feedback_instruction","If you have any feedback on the first half of the experiment, please leave it here.<p>")
         .center()
         .print()
     ,
 
     newTextInput("feedback", "")
-        .center()
-        .log()
-        .lines(0)
-        .size(420, 200)
-        .print()
-    ,
-
-    newText("prev_exp", "<div style='text-align: center; width: 420px; max-width: 420px;'><div style = 'display: inline-block; text-align: left;'><p>&nbsp;</p><p>Have you participated in any previous study on Prolific that contained sentences very similar to the ones in this study? (Your answer to this question will not affect your payment in any way.)</div></div>")
-        .center()
-        .print()
-    ,
-
-    newTextInput('prev_exp', "")
         .center()
         .log()
         .lines(0)
@@ -359,7 +449,8 @@ PennController("feedback",
 )
 
 newTrial("bye" ,
-    newText("Thank you for your participation! Please go to the following web page to verify your participation: <a href='https://app.prolific.co/submissions/complete?cc=728AA2CF'> https://app.prolific.co/submissions/complete?cc=728AA2CF</a>.")
+    //newText("Thank you for your participation! Please go to the following web page to verify your participation: <a href='https://app.prolific.co/submissions/complete?cc=728AA2CF'> https://app.prolific.co/submissions/complete?cc=728AA2CF</a>.")
+    newText("Thank you for your participation! Please go to the following web page to continue to the second half of the experiment: <a href=''></a>.")
         .print(),
         
     newButton()
