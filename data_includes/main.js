@@ -450,7 +450,7 @@ PennController("feedback",
 
 newTrial("bye" ,
     //newText("Thank you for your participation! Please go to the following web page to verify your participation: <a href='https://app.prolific.co/submissions/complete?cc=728AA2CF'> https://app.prolific.co/submissions/complete?cc=728AA2CF</a>.")
-    newText("Thank you for your participation! Please go to the following web page to continue to the second half of the experiment: <a href=''></a>.")
+    newText("Thank you for your participation! Please go to the following web page to continue to the second half of the experiment: <a href='https://farm.pcibex.net/r/fjfApp/'>https://farm.pcibex.net/r/fjfApp/</a>.")
         .print(),
         
     newButton()
